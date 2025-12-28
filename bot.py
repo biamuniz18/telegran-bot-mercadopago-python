@@ -9,7 +9,7 @@ TOKEN = os.getenv("BOT_TOKEN")
 PAYMENT_LINK = "SEU_LINK_MERCADO_PAGO"
 CHANNEL_LINK = "SEU_LINK_CANAL_PRIVADO"
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route("/")
 def home():
@@ -49,5 +49,5 @@ def main():
     threading.Thread(target=run_flask).start()
     application.run_polling()
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
