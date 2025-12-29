@@ -47,7 +47,9 @@ def main():
     application.add_handler(CallbackQueryHandler(paid, pattern="paid"))
 
     threading.Thread(target=run_flask).start()
-    application.run_polling()
 
-if __name__ == "__main__":
+    application.run_polling(close_loop=False)
+
+
+if _name_ == "_main_":
     main()
